@@ -6,44 +6,48 @@
 
 
 ###### Steps:
-1. Clone the repository
+* Clone the repository
 ```bash
 git clone https://github.com/iHasanMasud/dockerized-laravel-vue.git
 ```
 
-2. Build the images and run the containers
+* Build the images and run the containers
 ```bash
 docker-compose up -d --build
 ```
+* Copy the .env.example file to .env
+```bash
+cp .env.example .env
+```
 
-3. Install composer dependencies
+* Install composer dependencies
 ```bash
 docker-compose exec app composer install
 ```
 
-4. Generate a key for the application
+* Generate a key for the application
 ```bash
 docker-compose exec app php artisan key:generate
 ```
 
-5. Run the migrations
+* Run the migrations
 ```bash
 docker-compose exec app php artisan migrate
 ```
 
-6. Run the artisan serve command
+* Run the artisan serve command
 ```bash
 docker-compose exec app php artisan serve
 ```
 
-7. Install npm dependencies
+* Install npm dependencies
 ```bash
 docker-compose exec node npm install
 ```
 
-8. Build the assets
+* Build the assets
 ```bash
 docker-compose exec node npm run dev
 ```
 
-8. Visit `http://127.0.0.1:8080` in your browser
+* Visit `http://127.0.0.1:8080` in your browser
